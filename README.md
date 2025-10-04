@@ -58,3 +58,10 @@ This lesson taught how to keep a chatbot’s memory across conversations using T
 Each chat turn is tracked with a unique thread_id, keeping related traces linked.
 We used traceable functions to log retrieval, generation, and LLM activity.
 Finally, we built a small RAG chatbot and saw its connected traces inside LangSmith.
+
+**Lesson 2:Evaluators**
+
+This lesson taught how to use Evaluators in LangSmith to measure the quality of LLM outputs.
+We learned to compare model predictions with expected answers using built-in evaluators.
+It also showed how to create custom evaluators for specific tasks.
+Finally, we saw how to log results and analyze model performance automatically.
