@@ -49,3 +49,12 @@ This module taught how to group multi-turn LLM conversations into Threads in Lan
 We used a thread_id (UUID) to link related traces and track conversation history.
 Learned how to use traceable decorators to log retrieval, generation, and LLM calls.
 Finally, ran a simple RAG pipeline twice within the same thread to see connected traces in LangSmith.
+
+## ***Testing And Evaluation***
+
+**Lesson 1:Datasets**
+
+This module taught how to keep a chatbot’s memory across conversations using Threads in LangSmith.
+Each chat turn is tracked with a unique thread_id, keeping related traces linked.
+We used traceable functions to log retrieval, generation, and LLM activity.
+Finally, we built a small RAG chatbot and saw its connected traces inside LangSmith.
