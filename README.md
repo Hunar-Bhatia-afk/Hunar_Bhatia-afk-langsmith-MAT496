@@ -42,3 +42,81 @@ We used these 4 methods in total till now-:
 2. Langchain/Langgraph
 3. with trace()
 4. wrap_openai()  
+
+Conversational Threads
+Many LLM applications have a chatbot-like interface in which the user and the LLM application engage in a multi-turn conversation. In order to track these conversations, you can use the Threads feature in LangSmith.
+
+This is relevant to our RAG application, which should maintain context from prior conversations with users.
+
+Setup
+# You can set them inline
+import os
+os.environ["OPENAI_API_KEY"] = ""
+os.environ["LANGSMITH_API_KEY"] = ""
+os.environ["LANGSMITH_TRACING"] = "true"
+os.environ["LANGSMITH_PROJECT"] = "langsmith-academy"  # If you don't set this, traces will go to the Default project
+# Or you can use a .env file
+from dotenv import load_dotenv
+load_dotenv(dotenv_path="../../.env", override=True)
+Group traces into threads
+A Thread is a sequence of traces representing a single conversation. Each response is represented as its own trace, but these traces are linked together by being part of the same thread.
+
+To associate traces together, you need to pass in a special metadata key where the value is the unique identifier for that thread.
+
+The key value is the unique identifier for that conversation. The key name should be one of:
+
+session_id
+thread_id
+conversation_id.
+The value should be a UUID.
+
+import uuid
+thread_id = uuid.uuid4()
+from langsmith import traceable
+from openai import OpenAI
+from typing import List
+import nest_asyncio
+from utils import get_vector_db_retriever
+
+openai_client = OpenAI()
+nest_asyncio.apply()
+retriever = get_vector_db_retriever()
+
+@traceable(run_type="chain")
+def retrieve_documents(question: str):
+    return retriever.invoke(question)
+
+@traceable(run_type="chain")
+def generate_response(question: str, documents):
+    formatted_docs = "\n\n".join(doc.page_content for doc in documents)
+    rag_system_prompt = """You are an assistant for question-answering tasks. 
+    Use the following pieces of retrieved context to answer the latest question in the conversation. 
+    If you don't know the answer, just say that you don't know. 
+    Use three sentences maximum and keep the answer concise.
+    """
+    messages = [
+        {
+            "role": "system",
+            "content": rag_system_prompt
+        },
+        {
+            "role": "user",
+            "content": f"Context: {formatted_docs} \n\n Question: {question}"
+        }
+    ]
+    return call_openai(messages)
+
+@traceable(run_type="llm")
+def call_openai(
+    messages: List[dict], model: str = "gpt-4o-mini", temperature: float = 0.0
+) -> str:
+    return openai_client.chat.completions.create(
+        model=model,
+        messages=messages,
+        temperature=temperature,
+    )
+
+This module taught how to group multi-turn LLM conversations into Threads in LangSmith, letting each chat stay context-aware across turns.
+We used a thread_id (UUID) to link related traces and track conversation history.
+Learned how to use traceable decorators to log retrieval, generation, and LLM calls.
+Finally, ran a simple RAG pipeline twice within the same thread to see connected traces in LangSmith.
