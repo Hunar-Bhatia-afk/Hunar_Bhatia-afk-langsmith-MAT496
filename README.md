@@ -65,3 +65,10 @@ This lesson taught how to use Evaluators in LangSmith to measure the quality of 
 We learned to compare model predictions with expected answers using built-in evaluators.
 It also showed how to create custom evaluators for specific tasks.
 Finally, we saw how to log results and analyze model performance automatically.
+
+**Lesson 3:Experiments**
+
+This lesson taught how to create and manage Experiments in LangSmith to compare different LLM runs.
+We learned how to run multiple model versions or prompts and log their results automatically.
+It showed how to analyze metrics and see which setup performs best.
+Finally, we understood how experiments help in iterating and improving model quality systematically.
