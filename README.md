@@ -31,3 +31,14 @@ If we have a decorated tracable function with the run type of LLM and with the s
 When we had our run type as basic, the output still looked like a raw JSON file and when we changed it to llm, it gave a proper output with the help of ai.
 
 Similarly, we tried the other types of runs within the  lesson.
+
+**Lesson-:3 Alternate ways to Trace**
+
+As of now, we have only used the @traceable decorator to perform tracing but now, we’ll explore other methods.
+
+We used these 4 methods in total till now-:
+
+1. @traceable
+2. Langchain/Langgraph
+3. with trace()
+4. wrap_openai()  
