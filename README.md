@@ -146,3 +146,11 @@ Now, we’ll see how to push the prompts programmatically to the prompt_hub usin
 Here, we define a simple RAG prompt-:
 
 <img width="854" height="257" alt="image" src="https://github.com/user-attachments/assets/9d6ec9a2-6988-4b8d-8d98-b2ead1a2c153" />
+
+## ***Prompt Engineering Lifecycle***
+
+In this video, we’re going to take what we’ve learned about playground in prompt_hub.
+First, we’ll start from our notebook.
+We’ll ask our RAG a simple question on → “how fast can the fastest animal run?”.
+Navigating to our Langsmith academy, we’ll go to the most recent trace. 
+Basically, in this entire module, we switched the boring LangSmith document theory to random animal facts (like an animal’s speed, an octopus’s  hearts, elephant’s sleep, etc) to make a cooler wildlife knowledge base of our own.
