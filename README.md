@@ -72,3 +72,41 @@ This lesson taught how to create and manage Experiments in LangSmith to compare 
 We learned how to run multiple model versions or prompts and log their results automatically.
 It showed how to analyze metrics and see which setup performs best.
 Finally, we understood how experiments help in iterating and improving model quality systematically.
+
+
+_______________________________________________________________________________________________________________________________________
+
+# ***MODULE - 3***
+
+## ***Playground***
+
+In this video, we talk about the playground environment in LangSmith which is used  for prompt engineering. When we think about prompts, we think about the hard-coded strings that tell the LLM exactly what to do. The playground is specifically made for quickly iterating prompts and prompt templates.
+
+On opening the lesson, we can see that we have the prompting section and a brief list of messages.
+Let’s start with a simple question→ “What is the meaning of Life?”.
+On clicking Start button( or cmd+Enter) we see that our LLM has a pretty decent answer of its own.
+On the left side we can add messages to fully mimic a conversation with a human.
+
+Now, let’s go ahead and use the output to the last question as the new message and ask a follow-up question→ “Where can I learn about philosophy?”
+The responses generated further would now answer the questions in a conversational format.
+
+We also see that when we change our system message prompt to “You are a pirate from the 1600s.”, it makes that chatbot behave like a pirate in its responses. Hence, we can see that changing the system prompt dramatically changes the output.
+
+Note that we can switch models from the right side of the message heading and we can also change different model based attributes like temperature, presence penalty and frequency penalty.
+
+Also note that we can see the response metrics pop-up there like the response time, latency and token usage and then further make observations like *the response time of Claude-3.5o Sonnet is lesser than that of GPT - 4o- mini*.
+
+In the prompts tab on the top, we can click on the *+Compare* button to compare different models at once in a much easier way.
+
+So far, we’ve seen our response come back in a streaming format but we can also run them in a non- streaming way by just turning off streaming from the run options. Now that we’ve turned streaming off, we can also run the code with repetitions in order to get multiple responses at once.
+
+Let’s go ahead and add an output schema. An output schema will compare the output from the model with the schema that you’ve defined.
+
+In addition to the output schema, we have tool calling which would help us know how it would respond if it had access to a certain number of tools.
+
+Now, we’ll see how we can run an example on an interface over an entire dataset of examples.
+
+After the video, here’s how I did a little experimenting of my own from my own dataset on the playground interface-:
+
+![image.png](attachment:2a60e8b3-11d6-4d7f-b6bd-d349b434f346:image.png)
+
