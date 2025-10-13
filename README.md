@@ -154,3 +154,9 @@ First, we’ll start from our notebook.
 We’ll ask our RAG a simple question on → “how fast can the fastest animal run?”.
 Navigating to our Langsmith academy, we’ll go to the most recent trace. 
 Basically, in this entire module, we switched the boring LangSmith document theory to random animal facts (like an animal’s speed, an octopus’s  hearts, elephant’s sleep, etc) to make a cooler wildlife knowledge base of our own.
+
+## ***Prompt Canvas***
+In this lesson, I explored Prompt Canvas, a powerful tool for designing and refining prompts interactively. I learned how to give the chatbot (LLM agent) clear and precise instructions to get the desired output.I experimented with the canvas by:
+-> Modifying prompts and manually adding the required details to improve clarity.
+-> Asked the chatbot for suggestions on how to refine and enhance my prompts.
+-> Editing specific parts of the prompt directly within the canvas to see how small changes affect responses.
