@@ -108,5 +108,6 @@ Now, we’ll see how we can run an example on an interface over an entire datase
 
 After the video, here’s how I did a little experimenting of my own from my own dataset on the playground interface-:
 
-![image.png](attachment:2a60e8b3-11d6-4d7f-b6bd-d349b434f346:image.png)
+<img width="864" height="474" alt="image" src="https://github.com/user-attachments/assets/1f99c9f6-71c7-4f99-812a-d697b0e72658" />
+
 
