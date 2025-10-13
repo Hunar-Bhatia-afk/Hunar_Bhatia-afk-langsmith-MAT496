@@ -110,4 +110,39 @@ After the video, here’s how I did a little experimenting of my own from my own
 
 <img width="864" height="474" alt="image" src="https://github.com/user-attachments/assets/1f99c9f6-71c7-4f99-812a-d697b0e72658" />
 
+## ***Prompt Hub***
 
+It is a solution for iterating, storing and versioning on your prompts over time.
+Langsmith’s prompt_hub is a great way of storing your prompt templates. In this, you can store a list of messages which includes system message and typically also human message that’s passed to the chatbot. We can use the prompt templates quickly via the playground and we can also use them in our own code using sdk.
+This is what the prompt hub looks like -:
+<img width="850" height="344" alt="image" src="https://github.com/user-attachments/assets/f1b41946-cd96-48bb-8c4d-a785f0d04296" />
+By default, we create the chat-style-prompt but we can also create the instruction style prompts.
+Now, let’s go ahead and create our chat-style prompts→ This takes us to the playground interface.
+We’ll change the system prompt to that of a bot who is a character from the Peaky Blinders.
+
+We’ll add the output schema as follows-:
+<img width="855" height="494" alt="image" src="https://github.com/user-attachments/assets/45ab9754-dd95-4a16-a730-059bdaf8fe90" />
+
+Now, we’ll go ahead and save this prompt by clicking on the save button on the right side of the messages label.
+<img width="779" height="281" alt="image" src="https://github.com/user-attachments/assets/be2bc654-4afc-418e-a63d-3e9a4b308df4" />
+We can either make the prompt private or public. If it is private, it means only the users in our workspace can see it and if it is public it means that everyone can see it. Let’s keep ours private for now.
+
+When we save this prompt, it takes us back to the prompt_hub. Let’s see what information we have about our prompt.
+<img width="851" height="475" alt="image" src="https://github.com/user-attachments/assets/de5d2550-7703-4b1d-9404-57b076706ebd" />
+We also have our chatmodel configurations in it. We can see the provider and model that we are using. Moreover, all of our hyperparameters are stored here.
+
+One of the coolest parts about prompt_hub is that wer can actually use this prompt and save it in our codebase.
+Let’s go ahead and copy this code snippet here-:
+<img width="850" height="157" alt="image" src="https://github.com/user-attachments/assets/245b9538-a408-4727-ad22-184d734f80d1" />
+Now, let’s navigate over to our prompt_hub notebook in module 3.
+On invoking the prompt and asking the questions, we get our output as follows-:
+<img width="872" height="82" alt="image" src="https://github.com/user-attachments/assets/5881c6d9-6e09-4cf1-92ca-ec35c1af99d0" />
+And this later on when we change our prompt using runnable binding→
+
+<img width="866" height="63" alt="image" src="https://github.com/user-attachments/assets/81db1b66-45c3-48fb-bb69-060c09968870" />
+We can also commit changes and navigate to all the versions of our prompt.
+
+Now, we’ll see how to push the prompts programmatically to the prompt_hub using the sdk.
+Here, we define a simple RAG prompt-:
+
+<img width="854" height="257" alt="image" src="https://github.com/user-attachments/assets/9d6ec9a2-6988-4b8d-8d98-b2ead1a2c153" />
