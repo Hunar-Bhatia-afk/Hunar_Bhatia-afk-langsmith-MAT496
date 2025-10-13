@@ -163,5 +163,5 @@ In this lesson, I explored Prompt Canvas, a powerful tool for designing and refi
 -----------------------------------------------------------------------------------------------------------------------------------------------
 Problems I faced while doing module 3 -:
 1. In the first video, I tried to compare two models → one from anthropic( claude 3.5o sonnet) and GPT 4o mini but was unsuccessful as the anthropic key wasn’t working. Also, I observed that even for some of the other models of GPT, there was not output so I tried comparing two different models of the same provider but still it was showing errors in the output. I’ll look into it in the future.
-2. I was facing some issues in using the anthropic key in the main notebooks and although it seemed like it was because of the key being old, that was not the case as I tried using a new key but it later worked somehow.
+2. I was facing some issues in using the Langsmith key in the main notebooks and although it seemed like it was because of the key being old, that was not the case as I tried using a new key but it later worked somehow.
 3. I didn’t know that copying their exact directory into our own was allowed earlier so I manually installed all notebooks and did everything by myself😭.
